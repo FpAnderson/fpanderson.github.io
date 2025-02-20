@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anderson Ferreira - Desenvolvedor Full Stack</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Dynamic Background Animation */
+        .dynamic-bg {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(to right, rgba(119,119,119,1) 0%, rgba(63,94,251,1) 100%);
+        }
+        .dynamic-bg::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(to right, rgba(255,255,255,0.3) 10%, transparent 70%);
+            animation: pulse 10s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+        /* Navigation Bar Styles */
+        nav a {
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+        }
+        nav a:hover {
+            color: rgba(63, 94, 251, 1);
+            border-bottom: 2px solid rgba(63, 94, 251, 1);
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #e5e7eb;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        .timeline-item-content {
+            position: relative;
+            background-color: #f9fafb;
+            border: 1px solid #e5e7eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+        }
+        .timeline-item-content::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: -8px;
+            width: 16px;
+            height: 16px;
+            background-color: #2563eb;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+        }
+        .timeline-item:nth-child(even) .timeline-item-content {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item:nth-child(odd) .timeline-item-content {
+            margin-right: 50%;
+            transform: translateX(50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <div class="flex items-center space-x-4">
+                <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-12 h-12 rounded-full">
+                <span class="font-bold text-lg">Anderson Ferreira</span>
+            </div>
+            <div class="space-x-4">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Início</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Sobre Mim</a>
+                <a href="#experience" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Experiências</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Projetos</a>
+                <a href="#charts" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Gráficos</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="dynamic-bg flex items-center justify-center text-white">
+        <div class="container mx-auto px-4 text-center">
+            <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-64 h-64 rounded-full mx-auto mb-4">
+            <h1 class="text-5xl font-bold mb-4">Bem-vindo ao meu Portfólio</h1>
+            <p class="text-lg">Me chamo Anderson Ferreira, desenvolvedor full stack apaixonado por criar soluções inovadoras e eficientes.</p>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Sobre Mim</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Sou desenvolvedor full stack com <strong>7 anos de experiência</strong>, iniciando minha jornada em <strong>2016</strong> como estagiário em desenvolvimento Java e Android. Desde então, venho explorando e dominando tecnologias como <strong>React</strong>, <strong>Next.js</strong>, e <strong>Node.js</strong>. Atualmente, estou aprendendo <strong>Go</strong> para ampliar ainda mais minhas habilidades.
+                </p>
+                <p class="text-gray-700 text-lg leading-relaxed mt-4">
+                    Meu objetivo é sempre criar aplicações que sejam tanto funcionais quanto elegantes, com foco em melhorar a experiência do usuário. Trabalho bem em equipe, gosto de resolver problemas complexos e estou sempre em busca de novos aprendizados e desafios.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Charts Section -->
+    <section id="charts" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-6">Minhas Skills</h2>
+            <div class="space-y-6">
+                <div class="flex items-center space-x-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React" class="w-10 h-10">
+                    <span class="font-bold text-lg">React</span>
+                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-500 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="./img/nextjs.webp" alt="Next.js" class="w-10 h-10">
+                    <span class="font-bold text-lg">Next.js</span>
+                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-green-500 rounded-full" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Node.js" class="w-10 h-10">
+                    <span class="font-bold text-lg">Node.js</span>
+                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-yellow-500 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java" class="w-10 h-10">
+                    <span class="font-bold text-lg">Java</span>
+                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-red-500 rounded-full" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <img src="./img/go-language.png" alt="Go" class="w-10 h-10">
+                    <span class="font-bold text-lg">Go</span>
+                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                        <div class="h-full bg-blue-300 rounded-full" style="width: 50%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6">Minhas Experiências Profissionais</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <h3 class="font-bold text-xl">Cuore Labs</h3>
+                        <p class="text-gray-700">Desenvolvedor Full Stack</p>
+                        <p class="text-gray-500">Abr de 2024 - Presente (9 meses)</p>
+                        <p class="text-gray-700 mt-2">Competências: Node.js, React.js, AWS, MongoDB</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <h3 class="font-bold text-xl">CertDox</h3>
+                        <p class="text-gray-700">Desenvolvedor de Software</p>
+                        <p class="text-gray-500">Ago de 2021 - Abr de 2024 (2 anos e 9 meses)</p>
+                        <p class="text-gray-700 mt-2">Competências: JavaScript, Node.js, React.js, AWS Lambda, MongoDB</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <h3 class="font-bold text-xl">MB Labs</h3>
+                        <p class="text-gray-700">Desenvolvedor Full Stack</p>
+                        <p class="text-gray-500">Out de 2019 - Ago de 2021 (1 ano e 11 meses)</p>
+                        <p class="text-gray-700 mt-2">Competências: Node.js, React.js, PostgreSQL, AWS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-100 p-6 rounded shadow">
+                    <img src="./img/petcoins.jpg" alt="E-commerce para Petshop" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-xl">PetCoins</h3>
+                    <p class="text-gray-700 mt-2">E-commerce para Petshop desenvolvido com <strong>Java Spring Boot</strong> e <strong>Ionic</strong> criando uma plataforma para produtos e serviços de pets.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded shadow">
+                    <img src="./img/portunique.png" alt="Aplicativo de Empregos" class="w-full h-48 object-cover rounded mb-4">
+                    <h3 class="font-bold text-xl">Portunique</h3>
+                    <p class="text-gray-700 mt-2">Aplicativo de empregos criado com <strong>React Native</strong> e <strong>Node.js</strong>, conectando candidatos a vagas de emprego.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-blue-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Contato</h2>
+            <p class="flex justify-center items-center space-x-2"> 
+                <span>Email:</span> 
+                <a href="mailto:fpanderson.ferreira@gmail.com" class="underline flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-5 h-5 mr-2"> anderson.ferreira@gmail.com
+                </a>
+            </p>
+            <p class="flex justify-center items-center space-x-2 mt-4">
+                <span>LinkedIn:</span> 
+                <a href="https://www.linkedin.com/in/fpanderson/" class="underline flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="w-5 h-5 mr-2"> anderson-ferreira
+                </a>
+            </p>
+            <p class="flex justify-center items-center space-x-2 mt-4">
+                <span>GitHub:</span> 
+                <a href="https://github.com/FpAnderson" class="underline flex items-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" class="w-5 h-5 mr-2"> anderson ferreira
+                </a>
+            </p>
+            <p class="flex justify-center items-center space-x-2 mt-4">
+		    <span>WhatsApp:</span> 
+		    <a href="https://wa.me/19993705114" class="underline flex items-center">
+			<img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" class="w-5 h-5 mr-2"> Enviar mensagem
+		    </a>
+		</p>
+		</div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p>&copy; 2024 Anderson Ferreira. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
+
