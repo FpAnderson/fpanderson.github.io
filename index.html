@@ -3,41 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anderson Ferreira - Desenvolvedor Full Stack</title>
+    <title>Anderson Ferreira - Desenvolvedor Full Stack | Cartão de Visita Digital</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Dynamic Background Animation */
-        .dynamic-bg {
-            position: relative;
-            overflow: hidden;
-            height: 100vh;
-            background: linear-gradient(to right, rgba(119,119,119,1) 0%, rgba(63,94,251,1) 100%);
+        body {
+            font-family: 'Inter', sans-serif;
         }
-        .dynamic-bg::after {
+        
+        /* Modern Home Section */
+        .modern-home {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+        
+        .modern-home::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(to right, rgba(255,255,255,0.3) 10%, transparent 70%);
-            animation: pulse 10s infinite;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
         }
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+        
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float-shape 15s infinite linear;
+        }
+        
+        .shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+        
+        .shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 80%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+        
+        @keyframes float-shape {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
+            100% { transform: translateY(0px) rotate(360deg); opacity: 0.7; }
+        }
+        
+        .home-content {
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .avatar-container::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate 3s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .avatar {
+            border: 4px solid white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
-            50% {
-                transform: scale(1.5);
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         /* Navigation Bar Styles */
         nav a {
-            transition: color 0.3s ease, border-bottom 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
         nav a:hover {
-            color: rgba(63, 94, 251, 1);
-            border-bottom: 2px solid rgba(63, 94, 251, 1);
+            color: #667eea;
+            transform: translateY(-2px);
         }
 
         /* Timeline Styles */
@@ -55,7 +208,7 @@
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background-color: #e5e7eb;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         .timeline-item {
             position: relative;
@@ -66,9 +219,15 @@
             background-color: #f9fafb;
             border: 1px solid #e5e7eb;
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 12px;
             width: 90%;
             max-width: 400px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .timeline-item-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
         .timeline-item-content::after {
             content: '';
@@ -77,9 +236,10 @@
             left: -8px;
             width: 16px;
             height: 16px;
-            background-color: #2563eb;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 50%;
             border: 4px solid #ffffff;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
         }
         .timeline-item:nth-child(even) .timeline-item-content {
             margin-left: 50%;
@@ -89,176 +249,317 @@
             margin-right: 50%;
             transform: translateX(50%);
         }
+
+        /* Project Cards Styles */
+        .project-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Service Card Styles */
+        .service-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+        }
+
+        /* CTA Button Styles */
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
     <!-- Navigation Bar -->
-    <nav class="bg-white shadow sticky top-0 z-50">
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center py-4">
             <div class="flex items-center space-x-4">
-                <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-12 h-12 rounded-full">
-                <span class="font-bold text-lg">Anderson Ferreira</span>
+                <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-12 h-12 rounded-full ring-2 ring-blue-200">
+                <span class="font-bold text-lg gradient-text">Anderson Ferreira</span>
             </div>
-            <div class="space-x-4">
-                <a href="#home" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Início</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Sobre Mim</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Experiências</a>
-                <a href="#projects" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Projetos</a>
-                <a href="#charts" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Gráficos</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 hover:border-b-2 border-blue-600">Contato</a>
+            <div class="space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium">Início</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 font-medium">Projetos</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium">Serviços</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium">Sobre</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium">Contato</a>
             </div>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="dynamic-bg flex items-center justify-center text-white">
-        <div class="container mx-auto px-4 text-center">
-            <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-64 h-64 rounded-full mx-auto mb-4">
-            <h1 class="text-5xl font-bold mb-4">Bem-vindo ao meu Portfólio</h1>
-            <p class="text-lg">Me chamo Anderson Ferreira, desenvolvedor full stack apaixonado por criar soluções inovadoras e eficientes.</p>
+    <section id="home" class="modern-home flex items-center justify-center text-white relative">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="home-content">
+                <div class="avatar-container mb-8">
+                    <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-32 h-32 rounded-full avatar">
+                </div>
+                <h1 class="text-6xl font-bold mb-6 fade-in-up">
+                    <span class="typing-animation">Olá, eu sou Anderson</span>
+                </h1>
+                <p class="text-xl mb-4 fade-in-up" style="animation-delay: 0.5s;">
+                    Desenvolvedor Full Stack especializado em projetos com IA
+                </p>
+                <p class="text-lg mb-8 fade-in-up" style="animation-delay: 0.7s;">
+                    Transformando ideias em aplicações inteligentes e funcionais
+                </p>
+                <div class="flex justify-center space-x-4 fade-in-up" style="animation-delay: 1s;">
+                    <a href="#projects" class="bg-white/20 backdrop-blur-sm border border-white/30 px-8 py-3 rounded-full font-medium hover:bg-white/30 transition-all duration-300 hover:scale-105">
+                        Ver Meus Projetos
+                    </a>
+                    <a href="#contact" class="bg-white text-purple-600 px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 hover:scale-105">
+                        Contratar Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Meus Projetos</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Projetos desenvolvidos com foco em resolver problemas reais e criar soluções práticas para o dia a dia
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Checa a Mega Project -->
+                <div class="project-card bg-white rounded-xl p-8 shadow-xl border-2 border-purple-100">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <!-- App Icon/Image -->
+                        <div class="flex-shrink-0">
+                            <div class="w-32 h-32 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <span class="text-white text-4xl font-bold">🎰</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Info -->
+                        <div class="flex-grow">
+                            <div class="flex items-start justify-between mb-4">
+                                <div>
+                                    <h3 class="text-3xl font-bold text-gray-900 mb-2">Checa a Mega</h3>
+                                    <p class="text-gray-600 mb-4">
+                                        Aplicativo mobile que automatiza a conferência de jogos de loteria, eliminando o trabalho manual e o risco de erro humano.
+                                    </p>
+                                </div>
+                                <a href="https://play.google.com/store/apps/details?id=com.checaamega.app" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer"
+                                   class="flex-shrink-0 ml-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L6.05,2.66L14.54,11.15L20.16,10.81Z"/>
+                                    </svg>
+                                    <span>Play Store</span>
+                                </a>
+                            </div>
+
+                            <!-- Features -->
+                            <div class="mb-6">
+                                <h4 class="font-bold text-lg text-gray-900 mb-3">Principais Funcionalidades:</h4>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Cadastro e organização de jogos</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Conferência automática dos resultados</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Notificações de novos concursos</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Gerador inteligente de números</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Funciona offline</span>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <span class="text-green-500 mt-1">✓</span>
+                                        <span class="text-gray-700 text-sm">Sem cadastro ou login necessário</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Value Proposition -->
+                            <div class="bg-purple-50 rounded-lg p-4 mb-6">
+                                <p class="text-gray-800 font-medium italic">
+                                    "Você joga. O app confere."
+                                </p>
+                                <p class="text-gray-600 text-sm mt-2">
+                                    Resolve o problema de conferência manual cansativa, risco de erro humano e falta de organização dos jogos de loteria.
+                                </p>
+                            </div>
+
+                            <!-- Technologies -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium text-sm">Android</span>
+                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm">Google Play</span>
+                                <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-medium text-sm">App Gratuito</span>
+                                <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 font-medium text-sm">Privacidade Total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Como Posso Ajudar Você?</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Ofereço serviços especializados em desenvolvimento com IA e suporte para seus projetos
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Service 1 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Projetos com Inteligência Artificial</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Desenvolvo aplicações que utilizam IA para resolver problemas reais. Se você tem uma ideia que pode se beneficiar de inteligência artificial, posso ajudar desde a concepção até a implementação completa.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Aplicativos Mobile</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Crio aplicativos Android funcionais e intuitivos. Desde apps simples até soluções mais complexas, desenvolvo com foco em experiência do usuário e performance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Desenvolvimento Web</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Construo sites e aplicações web modernas e responsivas. Utilizo as melhores tecnologias para criar soluções rápidas, seguras e fáceis de usar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Suporte e Evolução</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Já tem um projeto iniciado? Posso ajudar a dar continuidade, otimizar o que já existe, adicionar novas funcionalidades e transformar seu projeto em algo ainda melhor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#contact" class="cta-button inline-flex items-center px-8 py-4 text-white font-bold rounded-lg text-lg">
+                    Entre em contato e vamos conversar
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Me -->
-    <section id="about" class="py-16 bg-gray-50">
+    <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6">Sobre Mim</h2>
             <div class="max-w-3xl mx-auto">
                 <p class="text-gray-700 text-lg leading-relaxed">
-                    Sou desenvolvedor full stack com <strong>7 anos de experiência</strong>, iniciando minha jornada em <strong>2016</strong> como estagiário em desenvolvimento Java e Android. Desde então, venho explorando e dominando tecnologias como <strong>React</strong>, <strong>Next.js</strong>, e <strong>Node.js</strong>. Atualmente, estou aprendendo <strong>Go</strong> para ampliar ainda mais minhas habilidades.
+                    Sou desenvolvedor full stack, iniciando minha jornada em <strong>2016</strong> como estagiário em desenvolvimento Java e Android. Desde então, venho explorando e dominando tecnologias como <strong>React</strong>, <strong>Next.js</strong>, e <strong>Node.js</strong>. Atualmente, estou aprendendo <strong>Go</strong> para ampliar ainda mais minhas habilidades.
                 </p>
                 <p class="text-gray-700 text-lg leading-relaxed mt-4">
-                    Meu objetivo é sempre criar aplicações que sejam tanto funcionais quanto elegantes, com foco em melhorar a experiência do usuário. Trabalho bem em equipe, gosto de resolver problemas complexos e estou sempre em busca de novos aprendizados e desafios.
+                    Desenvolvo projetos inovadores, seja utilizando <strong>Inteligência Artificial</strong>, criando aplicativos mobile ou construindo aplicações web. Tenho experiência em ajudar outros desenvolvedores a dar continuidade aos seus projetos e transformar ideias em soluções funcionais e úteis.
                 </p>
             </div>
         </div>
     </section>
     
-    <!-- Charts Section -->
-    <section id="charts" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-6">Minhas Skills</h2>
-            <div class="space-y-6">
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React" class="w-10 h-10">
-                    <span class="font-bold text-lg">React</span>
-                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-blue-500 rounded-full" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <img src="./img/nextjs.webp" alt="Next.js" class="w-10 h-10">
-                    <span class="font-bold text-lg">Next.js</span>
-                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-green-500 rounded-full" style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Node.js" class="w-10 h-10">
-                    <span class="font-bold text-lg">Node.js</span>
-                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-yellow-500 rounded-full" style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java" class="w-10 h-10">
-                    <span class="font-bold text-lg">Java</span>
-                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-red-500 rounded-full" style="width: 60%;"></div>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <img src="./img/go-language.png" alt="Go" class="w-10 h-10">
-                    <span class="font-bold text-lg">Go</span>
-                    <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="h-full bg-blue-300 rounded-full" style="width: 50%;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-white">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-6">Minhas Experiências Profissionais</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3 class="font-bold text-xl">Cuore Labs</h3>
-                        <p class="text-gray-700">Desenvolvedor Full Stack</p>
-                        <p class="text-gray-500">Abr de 2024 - Presente (9 meses)</p>
-                        <p class="text-gray-700 mt-2">Competências: Node.js, React.js, AWS, MongoDB</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3 class="font-bold text-xl">CertDox</h3>
-                        <p class="text-gray-700">Desenvolvedor de Software</p>
-                        <p class="text-gray-500">Ago de 2021 - Abr de 2024 (2 anos e 9 meses)</p>
-                        <p class="text-gray-700 mt-2">Competências: JavaScript, Node.js, React.js, AWS Lambda, MongoDB</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <h3 class="font-bold text-xl">MB Labs</h3>
-                        <p class="text-gray-700">Desenvolvedor Full Stack</p>
-                        <p class="text-gray-500">Out de 2019 - Ago de 2021 (1 ano e 11 meses)</p>
-                        <p class="text-gray-700 mt-2">Competências: Node.js, React.js, PostgreSQL, AWS</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Projetos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-gray-100 p-6 rounded shadow">
-                    <img src="./img/petcoins.jpg" alt="E-commerce para Petshop" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="font-bold text-xl">PetCoins</h3>
-                    <p class="text-gray-700 mt-2">E-commerce para Petshop desenvolvido com <strong>Java Spring Boot</strong> e <strong>Ionic</strong> criando uma plataforma para produtos e serviços de pets.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded shadow">
-                    <img src="./img/portunique.png" alt="Aplicativo de Empregos" class="w-full h-48 object-cover rounded mb-4">
-                    <h3 class="font-bold text-xl">Portunique</h3>
-                    <p class="text-gray-700 mt-2">Aplicativo de empregos criado com <strong>React Native</strong> e <strong>Node.js</strong>, conectando candidatos a vagas de emprego.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact -->
-    <section id="contact" class="bg-blue-600 text-white py-16">
+    <section id="contact" class="bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white py-16">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Contato</h2>
-            <p class="flex justify-center items-center space-x-2"> 
-                <span>Email:</span> 
-                <a href="mailto:fpanderson.ferreira@gmail.com" class="underline flex items-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-5 h-5 mr-2"> anderson.ferreira@gmail.com
-                </a>
+            <h2 class="text-4xl font-bold mb-4">Vamos Trabalhar Juntos?</h2>
+                <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Estou pronto para ajudar você a desenvolver seus projetos, seja com IA, aplicativos mobile, sites ou dar continuidade ao que já começou. Entre em contato e vamos conversar!
             </p>
-            <p class="flex justify-center items-center space-x-2 mt-4">
-                <span>LinkedIn:</span> 
-                <a href="https://www.linkedin.com/in/fpanderson/" class="underline flex items-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="w-5 h-5 mr-2"> anderson-ferreira
-                </a>
-            </p>
-            <p class="flex justify-center items-center space-x-2 mt-4">
-                <span>GitHub:</span> 
-                <a href="https://github.com/FpAnderson" class="underline flex items-center">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" class="w-5 h-5 mr-2"> anderson ferreira
-                </a>
-            </p>
-            <p class="flex justify-center items-center space-x-2 mt-4">
-		    <span>WhatsApp:</span> 
-		    <a href="https://wa.me/19993705114" class="underline flex items-center">
-			<img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" class="w-5 h-5 mr-2"> Enviar mensagem
-		    </a>
-		</p>
-		</div>
+            
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 max-w-2xl mx-auto mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <a href="mailto:fpanderson.ferreira@gmail.com" class="flex items-center justify-center space-x-3 bg-white/20 hover:bg-white/30 rounded-lg p-4 transition-all duration-300 transform hover:scale-105">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="w-6 h-6">
+                        <span class="font-medium">Email</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fpanderson/" class="flex items-center justify-center space-x-3 bg-white/20 hover:bg-white/30 rounded-lg p-4 transition-all duration-300 transform hover:scale-105">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="w-6 h-6">
+                        <span class="font-medium">LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/FpAnderson" class="flex items-center justify-center space-x-3 bg-white/20 hover:bg-white/30 rounded-lg p-4 transition-all duration-300 transform hover:scale-105">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub" class="w-6 h-6">
+                        <span class="font-medium">GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md rounded-lg p-6 max-w-xl mx-auto">
+                <p class="text-lg font-semibold mb-2">💡 Precisa de ajuda com seu projeto?</p>
+                <p class="text-sm opacity-90">
+                    Seja para desenvolver do zero, dar continuidade a um projeto existente, ou transformar sua ideia em realidade, estou aqui para ajudar!
+                </p>
+            </div>
+        </div>
     </section>
 
     <footer class="bg-gray-800 text-white py-6 text-center">
