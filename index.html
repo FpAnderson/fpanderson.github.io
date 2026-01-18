@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anderson Ferreira - Desenvolvedor Full Stack | Cartão de Visita Digital</title>
+    <title>Anderson Ferreira - Desenvolvedor Full Stack</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -26,11 +26,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: url('./img/cabeçalho-fpa.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.4;
+            background: 
+                radial-gradient(ellipse at top, rgba(0, 150, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(100, 200, 255, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(0, 150, 255, 0.1) 0%, rgba(100, 200, 255, 0.05) 100%);
             z-index: 0;
         }
         
@@ -105,18 +104,17 @@
         .logo-container {
             position: relative;
             display: inline-block;
-            filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.5));
         }
         
         .logo-container::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             background: linear-gradient(45deg, rgba(0, 150, 255, 0.5), rgba(100, 200, 255, 0.5), rgba(0, 150, 255, 0.5));
-            border-radius: 12px;
+            border-radius: 50%;
             z-index: -1;
             animation: glow-pulse 3s ease-in-out infinite;
             opacity: 0.6;
@@ -129,13 +127,10 @@
         
         .logo-fpa {
             transition: transform 0.3s ease, filter 0.3s ease;
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
         }
         
         .logo-fpa:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             filter: drop-shadow(0 0 30px rgba(0, 150, 255, 0.8));
         }
         
@@ -376,12 +371,11 @@
     <nav class="backdrop-blur-md sticky top-0 z-50">
         <div class="container mx-auto px-4 flex justify-between items-center py-3">
             <div class="flex items-center space-x-3">
-                <img src="./img/logo-fpa.png" alt="FPA Logo" class="h-12 w-auto filter drop-shadow-[0_0_10px_rgba(0,150,255,0.5)]">
+                <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="h-12 w-12 rounded-full object-cover filter drop-shadow-[0_0_10px_rgba(0,150,255,0.5)]">
             </div>
             <div class="space-x-6">
                 <a href="#home" class="font-medium transition-colors">Início</a>
-                <a href="#projects" class="font-medium transition-colors">Projetos</a>
-                <a href="#services" class="font-medium transition-colors">Habilidades</a>
+                <a href="#skills" class="font-medium transition-colors">Habilidades</a>
                 <a href="#about" class="font-medium transition-colors">Sobre</a>
                 <a href="#contact" class="font-medium transition-colors">Contato</a>
             </div>
@@ -394,305 +388,82 @@
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="home-content">
                 <div class="logo-container mb-8 fade-in-up">
-                    <img src="./img/logo-fpa.png" alt="FPA Logo" class="w-40 h-40 mx-auto logo-fpa">
+                    <img src="./img/avatar.jpg" alt="Anderson Ferreira" class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-blue-400/50 shadow-[0_0_30px_rgba(0,150,255,0.5)] logo-fpa">
                 </div>
                 <h1 class="text-6xl font-bold mb-6 fade-in-up synthwave-text">
                     <span class="typing-animation">Olá, eu sou Anderson</span>
                 </h1>
                 <p class="text-xl mb-4 fade-in-up text-blue-200" style="animation-delay: 0.5s;">
-                    Desenvolvedor Full Stack especializado em projetos com IA
+                    Desenvolvedor Full Stack apaixonado por tecnologia
                 </p>
                 <p class="text-lg mb-8 fade-in-up text-blue-300" style="animation-delay: 0.7s;">
-                    Transformando ideias em aplicações inteligentes e funcionais
+                    Explorando novas tecnologias e aprendendo continuamente
                 </p>
                 <div class="flex justify-center space-x-4 fade-in-up" style="animation-delay: 1s;">
-                    <a href="#projects" class="bg-blue-500/20 backdrop-blur-sm border-2 border-blue-400/50 px-8 py-3 rounded-lg font-medium hover:bg-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:scale-105 text-blue-200 hover:text-white hover:shadow-[0_0_20px_rgba(0,150,255,0.5)]">
-                        Ver Meus Projetos
+                    <a href="#skills" class="bg-blue-500/20 backdrop-blur-sm border-2 border-blue-400/50 px-8 py-3 rounded-lg font-medium hover:bg-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:scale-105 text-blue-200 hover:text-white hover:shadow-[0_0_20px_rgba(0,150,255,0.5)]">
+                        Minhas Habilidades
                     </a>
                     <a href="#contact" class="bg-blue-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-600 transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,150,255,0.5)] hover:shadow-[0_0_30px_rgba(0,150,255,0.8)]">
-                        Entrar em Contato
+                        Entre em Contato
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-900">
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 gradient-text">Meus Projetos</h2>
+                <h2 class="text-4xl font-bold mb-4 gradient-text">Minhas Habilidades Técnicas</h2>
                 <p class="text-blue-200 text-lg max-w-2xl mx-auto">
-                    Projetos desenvolvidos com foco em resolver problemas reais e criar soluções práticas para o dia a dia
-                </p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Checa a Mega Project -->
-                <div class="project-card rounded-xl p-8 shadow-xl">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <!-- App Icon/Image -->
-                        <div class="flex-shrink-0">
-                            <img src="./img/checa_mega_logo_icon.png" alt="Checa a Mega" class="w-32 h-32 rounded-2xl shadow-lg object-cover project-icon">
-                        </div>
-                        
-                        <!-- Project Info -->
-                        <div class="flex-grow">
-                            <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 class="text-3xl font-bold text-white mb-2">Checa a Mega</h3>
-                                    <p class="text-blue-200 mb-4">
-                                        Aplicativo mobile que automatiza a conferência de jogos de loteria, eliminando o trabalho manual e o risco de erro humano.
-                                    </p>
-                                </div>
-                                <a href="https://play.google.com/store/apps/details?id=com.checaamega.app" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="flex-shrink-0 ml-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L6.05,2.66L14.54,11.15L20.16,10.81Z"/>
-                                    </svg>
-                                    <span>Play Store</span>
-                                </a>
-                            </div>
-
-                            <!-- Features -->
-                            <div class="mb-6">
-                                <h4 class="font-bold text-lg text-white mb-3">Principais Funcionalidades:</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Cadastro e organização de jogos</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Conferência automática dos resultados</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Notificações de novos concursos</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Gerador inteligente de números</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Funciona offline</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Sem cadastro ou login necessário</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Value Proposition -->
-                            <div class="bg-blue-500/10 rounded-lg p-4 mb-6 border border-blue-400/30">
-                                <p class="text-blue-200 font-medium italic">
-                                    "Você joga. O app confere."
-                                </p>
-                                <p class="text-blue-300 text-sm mt-2">
-                                    Resolve o problema de conferência manual cansativa, risco de erro humano e falta de organização dos jogos de loteria.
-                                </p>
-                            </div>
-
-                            <!-- Technologies -->
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-medium text-sm">Android</span>
-                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm">Google Play</span>
-                                <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-medium text-sm">App Gratuito</span>
-                                <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 font-medium text-sm">Privacidade Total</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Click Startup Simulator Project -->
-                <div class="project-card rounded-xl p-8 shadow-xl mt-8">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <!-- App Icon/Image -->
-                        <div class="flex-shrink-0">
-                            <img src="./img/click_startup_simulator_icon.png" alt="Click Startup Simulator" class="w-32 h-32 rounded-2xl shadow-lg object-cover project-icon">
-                        </div>
-                        
-                        <!-- Project Info -->
-                        <div class="flex-grow">
-                            <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 class="text-3xl font-bold text-white mb-2">Click Startup Simulator</h3>
-                                    <p class="text-blue-200 mb-4">
-                                        Jogo de simulação e estratégia onde você gerencia uma startup de tecnologia, começando do zero e evoluindo até se tornar uma Big Tech. Combina elementos de clicker com gerenciamento estratégico.
-                                    </p>
-                                </div>
-                                <a href="https://play.google.com/store/apps/details?id=com.clickstartup.simulator" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="flex-shrink-0 ml-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L6.05,2.66L14.54,11.15L20.16,10.81Z"/>
-                                    </svg>
-                                    <span>Play Store</span>
-                                </a>
-                            </div>
-
-                            <!-- Features -->
-                            <div class="mb-6">
-                                <h4 class="font-bold text-lg text-white mb-3">Principais Funcionalidades:</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Sistema de cliques e gerenciamento de recursos</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Contratação de funcionários para renda passiva</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">stages de progressão (Startup → Big Tech)</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Sistema de upgrades e melhorias</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Eventos aleatórios e desafios estratégicos</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Disponível para Android</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Value Proposition -->
-                            <div class="bg-blue-500/10 rounded-lg p-4 mb-6 border border-blue-400/30">
-                                <p class="text-blue-200 font-medium italic">
-                                    "Toque. Cresça. Lucre."
-                                </p>
-                                <p class="text-blue-300 text-sm mt-2">
-                                    Experiência viciante de simulação empresarial que combina estratégia, gerenciamento de recursos e progressão satisfatória através de níveis diferentes.
-                                </p>
-                            </div>
-
-                            <!-- Technologies -->
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm">Android</span>
-                                <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 font-medium text-sm">Jogo Gratuito</span>
-                                <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-700 font-medium text-sm">Simulação</span>
-                                <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 font-medium text-sm">Estratégia</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Operação Troninho Project -->
-                <div class="project-card rounded-xl p-8 shadow-xl mt-8">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <!-- App Icon/Image -->
-                        <div class="flex-shrink-0">
-                            <img src="./img/operacao_troninho_icon.png" alt="Operação Troninho" class="w-32 h-32 rounded-2xl shadow-lg object-cover project-icon">
-                        </div>
-                        
-                        <!-- Project Info -->
-                        <div class="flex-grow">
-                            <div class="flex items-start justify-between mb-4">
-                                <div>
-                                    <h3 class="text-3xl font-bold text-white mb-2">Operação Troninho</h3>
-                                    <p class="text-blue-200 mb-4">
-                                        Aplicativo criado para ajudar pais, mães e cuidadores no processo de desfralde de bebês e crianças, de forma prática, respeitosa e baseada em evidências científicas.
-                                    </p>
-                                </div>
-                                <a href="https://play.google.com/store/apps/details?id=com.operacaotroninho.app" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer"
-                                   class="flex-shrink-0 ml-4 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L6.05,2.66L14.54,11.15L20.16,10.81Z"/>
-                                    </svg>
-                                    <span>Play Store</span>
-                                </a>
-                            </div>
-
-                            <!-- Features -->
-                            <div class="mb-6">
-                                <h4 class="font-bold text-lg text-white mb-3">Principais Funcionalidades:</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-green-500 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Onboarding personalizado por perfil da criança</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Registro diário simples de atividades</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Acompanhamento de progresso com gráficos</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Exercícios práticos por fase do desfralde</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Modo treino com lembretes e notificações</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Dicas rápidas e insights inteligentes</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Funciona totalmente offline</span>
-                                    </div>
-                                    <div class="flex items-start space-x-2">
-                                        <span class="text-blue-400 mt-1">✓</span>
-                                        <span class="text-blue-100 text-sm">Privacidade total - dados apenas no dispositivo</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Value Proposition -->
-                            <div class="bg-blue-500/10 rounded-lg p-4 mb-6 border border-blue-400/30">
-                                <p class="text-blue-200 font-medium italic">
-                                    "Apoio completo para o desfralde infantil"
-                                </p>
-                                <p class="text-blue-300 text-sm mt-2">
-                                    Abordagem respeitosa e baseada em evidências científicas, adaptada para crianças típicas e com necessidades especiais.
-                                </p>
-                            </div>
-
-                            <!-- Technologies -->
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 font-medium text-sm">Android</span>
-                                <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-700 font-medium text-sm">App Gratuito</span>
-                                <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 font-medium text-sm">Offline</span>
-                                <span class="px-3 py-1 rounded-full bg-lime-100 text-lime-700 font-medium text-sm">Privacidade Total</span>
-                                <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 font-medium text-sm">Parenting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4 gradient-text">Minhas Habilidades</h2>
-                <p class="text-blue-200 text-lg max-w-2xl mx-auto">
-                    Áreas em que trabalho e posso ajudar com seus projetos
+                    Tecnologias e ferramentas que utilizo no meu dia a dia
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <!-- Service 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Skill 1 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Frontend</h3>
+                        <p class="text-blue-200 leading-relaxed mb-4">
+                            React, Next.js, HTML5, CSS3, JavaScript/TypeScript
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-sm">React</span>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-sm">Next.js</span>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-sm">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
+                    <div class="mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Backend</h3>
+                        <p class="text-blue-200 leading-relaxed mb-4">
+                            Node.js, APIs REST, bancos de dados relacionais e NoSQL
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-sm">Node.js</span>
+                            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-sm">APIs</span>
+                            <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-300 text-sm">Databases</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill 3 -->
                 <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
                     <div class="mb-4">
                         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
@@ -700,66 +471,36 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Projetos com Inteligência Artificial</h3>
-                        <p class="text-blue-200 leading-relaxed">
-                            Tenho experiência em desenvolver aplicações que utilizam IA para resolver problemas reais. Posso trabalhar desde a concepção até a implementação completa de soluções inteligentes.
+                        <h3 class="text-2xl font-bold text-white mb-3">Inteligência Artificial</h3>
+                        <p class="text-blue-200 leading-relaxed mb-4">
+                            Integração de APIs de IA, desenvolvimento de soluções inteligentes
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-sm">APIs de IA</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-sm">Machine Learning</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
+                <!-- Skill 4 -->
                 <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
                     <div class="mb-4">
-                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mb-4">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Aplicativos Mobile</h3>
-                        <p class="text-blue-200 leading-relaxed">
-                            Desenvolvo aplicativos Android funcionais e intuitivos. Trabalho desde apps simples até soluções mais complexas, sempre com foco em experiência do usuário e performance.
+                        <h3 class="text-2xl font-bold text-white mb-3">Go</h3>
+                        <p class="text-blue-200 leading-relaxed mb-4">
+                            Aprendendo Go para desenvolvimento de sistemas e APIs de alto desempenho
                         </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-sm">Go</span>
+                            <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-sm">Em aprendizado</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
-                    <div class="mb-4">
-                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Desenvolvimento Web</h3>
-                        <p class="text-blue-200 leading-relaxed">
-                            Desenvolvo sites e aplicações web modernas e responsivas. Utilizo tecnologias atuais para criar soluções rápidas, seguras e fáceis de usar.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="service-card rounded-lg p-8 shadow-lg border border-gray-200">
-                    <div class="mb-4">
-                        <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-white mb-3">Suporte e Evolução</h3>
-                        <p class="text-blue-200 leading-relaxed">
-                            Posso ajudar a dar continuidade a projetos já iniciados, otimizar o que já existe, adicionar novas funcionalidades e evoluir projetos para o próximo nível.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="#contact" class="cta-button inline-flex items-center px-8 py-4 text-white font-bold rounded-lg text-lg">
-                    Entre em contato e vamos conversar
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </a>
             </div>
         </div>
     </section>
@@ -773,7 +514,7 @@
                     Sou desenvolvedor full stack, iniciando minha jornada em <strong class="text-blue-100">2016</strong> como estagiário em desenvolvimento Java e Android. Desde então, venho explorando e dominando tecnologias como <strong class="text-blue-100">React</strong>, <strong class="text-blue-100">Next.js</strong>, e <strong class="text-blue-100">Node.js</strong>. Atualmente, estou aprendendo <strong class="text-blue-100">Go</strong> para ampliar ainda mais minhas habilidades.
                 </p>
                 <p class="text-blue-200 text-lg leading-relaxed mt-4">
-                    Desenvolvo projetos inovadores, seja utilizando <strong class="text-blue-100">Inteligência Artificial</strong>, criando aplicativos mobile ou construindo aplicações web. Tenho experiência em ajudar outros desenvolvedores a dar continuidade aos seus projetos e transformar ideias em soluções funcionais e úteis.
+                    Gosto de trabalhar com projetos inovadores, explorando <strong class="text-blue-100">Inteligência Artificial</strong> e outras tecnologias. Estou sempre em busca de aprender novas tecnologias e melhorar minhas habilidades como desenvolvedor.
                 </p>
             </div>
         </div>
@@ -785,7 +526,7 @@
         <div class="container mx-auto px-4 text-center relative z-10">
             <h2 class="text-4xl font-bold mb-4 synthwave-text">Vamos Conversar?</h2>
                 <p class="text-xl mb-8 max-w-2xl mx-auto">
-                Se você tem um projeto em mente ou quer saber mais sobre meu trabalho, fique à vontade para entrar em contato. Adoro conversar sobre tecnologia e desenvolvimento!
+                Fique à vontade para entrar em contato. Adoro conversar sobre tecnologia e desenvolvimento!
             </p>
             
             <div class="bg-blue-500/10 backdrop-blur-md rounded-2xl p-8 max-w-2xl mx-auto mb-8 border-2 border-blue-400/30">
@@ -806,9 +547,9 @@
             </div>
 
             <div class="bg-blue-500/10 backdrop-blur-md rounded-lg p-6 max-w-xl mx-auto border border-blue-400/30">
-                <p class="text-lg font-semibold mb-2">💡 Quer conversar sobre projetos?</p>
+                <p class="text-lg font-semibold mb-2">💡 Vamos trocar ideias?</p>
                 <p class="text-sm opacity-90">
-                    Estou sempre aberto para trocar ideias, compartilhar experiências e conhecer novos projetos. Entre em contato quando quiser!
+                    Estou sempre aberto para conversar sobre tecnologia, compartilhar experiências e aprender coisas novas. Entre em contato quando quiser!
                 </p>
             </div>
         </div>
